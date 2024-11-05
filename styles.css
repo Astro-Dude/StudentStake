@@ -39,7 +39,7 @@ body {
     justify-content: space-between;
     align-items: center;
     transition: all 0.5s ease;
-    /* background-color: var(--bg-color); */
+    backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -201,10 +201,14 @@ span {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--bg-color);
     color: var(--text-color);
     padding: 50px 0;
     text-align: center;
+    padding: 50px;
 }
 
 
