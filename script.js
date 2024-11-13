@@ -39,14 +39,6 @@ const userSignIn = async() => {
       console.log(error.message);
     })
 };
-  
-const userSignOut = async() => {
-  signOut(auth).then(() => {
-    console.log("User signed out");
-  }).catch((error) => {
-    console.log(error.message);
-  })
-};
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -57,4 +49,4 @@ onAuthStateChanged(auth, (user) => {
 });
 
 login.addEventListener('click', userSignIn);
-register.addEventListener('click', userSignOut);
+register.addEventListener('click', userSignIn);
