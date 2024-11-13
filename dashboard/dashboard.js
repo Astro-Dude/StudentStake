@@ -1,3 +1,11 @@
+let menu = document.querySelector("#menu-icon");
+let nav = document.querySelector(".nav");
+
+menu.onclick = () => {
+  menu.classList.toggle("bx-x");
+  nav.classList.toggle("active");
+};
+
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 
