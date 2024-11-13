@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentStake</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
         </ul>
 
         <div class="right-content">
-            <a href="#" class="nav-btn" id="login">Login</a>
+            <a class="nav-btn" id="login">Login</a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
 
@@ -34,7 +35,7 @@
             <p>Dive into the exciting world of betting with our user-friendly platform. Perfect your skills and stake your claim!</p>
             
             <div class="home-btn">
-                <a href="#" class="btn">Register now</a>
+                <a class="btn" id="register">Register now</a>
             </div>
 
         </div>
@@ -58,7 +59,9 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+
+    <script src="script.js" defer type="module"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
 </body>
 </html>
