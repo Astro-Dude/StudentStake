@@ -18,6 +18,7 @@ navLinks.forEach(link => {
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+import { initializeUserData } from './firebase-db.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAh391JmV8sMQMsG4GM-d5YYDW9B2Wm02Q",
@@ -40,9 +41,9 @@ const register = document.getElementById("register");
 
 const userSignIn = async() => {
   signInWithPopup(auth, provider)
-  .then((result) => {
+  .then(async (result) => {
       const user = result.user;
-      console.log("User signed in:", user);
+      await initializeUserData(user);  // Initialize user data
       window.location.href = "dashboard/dashboard.html";
   }).catch((error) => {
       console.log(error.message);

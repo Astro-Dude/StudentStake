@@ -66,12 +66,19 @@ body {
     transition: all 0.6s ease;
 }
 
+.nav a {
+    display: block;
+    padding: 0;
+    margin: 0px 0px 25px 0px;
+    font-size: 1.7rem;
+}
+
 .nav.active {
     left: 0;
 }
 
 .nav a {
-    display: block;
+    display: inline-block;
     margin: 10px 35px;
     font-size: var(--p-font);
     color: var(--text-color);
@@ -96,94 +103,89 @@ body {
     display: block;
 }
 
-section {
-    padding: 0 14%;
-}
-
-.games {
-    padding-top: 10%;
-    width: 100%;
-    height: 100vh;
+.mine-game {
+    padding-top: 100px;
+    min-height: 100vh;
     background-image: url("../Images/bg.png");
     background-size: cover;
     background-position: center;
 }
 
-.games h2 {
-    margin-bottom: 4rem;
+.mine-game-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
-.games-container {
+.game-controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
+    gap: 5px;
+    margin-top: 20px;
 }
 
-.games-box {
-    display: flex;
+.cell {
+    aspect-ratio: 1;
+    background: var(--main-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.games-container .games-box {
-    position: relative;
-    border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
-    overflow: hidden;
+.cell.revealed {
+    background: #4a4a4a;
 }
 
-
-.games-box img {
-    width: 100%;
-    transition: 0.5s ease;
+.cell.mine {
+    background: #ff4444 !important;
 }
 
-.games-box:hover img {
-    transform: scale(1.1);
+.cell.safe {
+    background: #44ff44 !important;
 }
 
-.games-box .games-layer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 4rem;
-    transform: translateY(100%);
-    transition: 0.5s ease;
+.cell:hover:not(.revealed) {
+    background: #927547;
 }
 
-.games-box:hover .games-layer {
-    transform: translateY(0);
-}
-
-.games-layer h4 {
-    font-size: 3rem;
-}
-
-.games-layer p {
+#bet-amount {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--main-color);
+    background: transparent;
+    color: var(--text-color);
     font-size: 1.6rem;
-    margin: 0.3rem 0 1rem;
+    width: 180px;
 }
 
-.games-layer a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: var(--text-color);
-    border-radius: 50%;
+button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.6rem;
 }
 
-.games-layer a i {
-    font-size: 2rem;
-    color: var(--main-color);
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#game-status {
+    margin-left: auto;
+    color: var(--text-color);
+    font-size: 1.6rem;
 }
 
 footer {
@@ -194,45 +196,16 @@ footer {
     color: var(--text-color);
     padding: 50px 0;
     text-align: center;
-    padding: 50px;
-}
-
-@media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
-}
-
-@media (max-width: 991px) {
-    .header {
-        padding: 2rem 3%;
-    }
-
-    section {
-        padding: 10rem 3% 2 rem;
-    }
-
-    .games {
-        padding-bottom: 7rem;
-    }
-
-    .footer {
-        padding: 2rem 3%;
-    }
 }
 
 @media (max-width: 950px) {
-    
-}
-
-@media (max-width: 786px) {
-    .games-container {
-        grid-template-columns: repeat(2, 1fr);
+    .game-controls {
+        justify-content: center;
     }
-}
 
-@media (max-width: 617px) {
-    .games-container {
-        grid-template-columns: 1fr;
+    #game-status {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
     }
 }

@@ -18,6 +18,7 @@ navLinks.forEach(link => {
 
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getUserBalance } from '../firebase-db.js';
 
 
 const firebaseConfig = {
@@ -36,12 +37,18 @@ const auth = getAuth();
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     if (!user) {
-
       window.location.href = '../index.html';
     } else {
       console.log('Logged in user:', user.email);
+      
+      // Get and display user's balance
+      const balance = await getUserBalance(user.uid);
+      const statsSection = document.querySelector('.stats');
+      if (statsSection) {
+        statsSection.innerHTML = `<h2>Balance: ${balance} coins</h2>`;
+      }
     }
   });
 });

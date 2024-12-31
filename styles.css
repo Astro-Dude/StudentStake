@@ -60,6 +60,7 @@ body {
     font-size: var(--p-font);
     color: var(--text-color);
     transition: all 0.6s ease;
+    cursor: pointer;
 }
 
 .nav a:hover {
@@ -83,6 +84,7 @@ body {
     font-weight: 500;
     transition: all 0.6s ease;
     margin: 5px;
+    cursor: pointer;
 }
 
 .nav-btn:hover {
@@ -182,6 +184,7 @@ span {
 .home-btn {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mine Game - StudentStake</title>
+    <link rel="stylesheet" href="mine-game.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div><img src="../Images/logo_dark.png" class="logo" /></div>
+      <ul class="nav">
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+        <a class="nav-btn" id="logout">Logout</a>
+      </ul>
+    
+    <div class="right-content">
+        <div class="stats"></div>
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+    </header>
+
+    <section class="mine-game" id="mine-game">
+      <div class="mine-game-container">
+        <div class="game-controls">
+          <input type="number" id="bet-amount" placeholder="Enter bet amount" min="1">
+          <button id="start-game">Start Game</button>
+          <button id="cashout" disabled>Cash Out</button>
+          <div id="game-status"></div>
+        </div>
+        <div class="game-grid" id="game-grid"></div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="footer-content">
+        <h1>StudentStake</h1>
+        <p>© 2024 StudentStake. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="mine-game.js" type="module"></script>
+  </body>
+</html>
