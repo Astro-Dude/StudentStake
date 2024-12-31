@@ -75,7 +75,7 @@ class MineGame {
 
         const balance = await getUserBalance(user.uid);
         if (betAmount <= 9 || betAmount > balance) {
-            alert('Invalid bet amount. Minimum bet is 10 coins');
+            alert('Invalid bet amount. Minimum bet is 10 coins and maximum bet is your current balance');
             return;
         }
 
