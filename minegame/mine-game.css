@@ -49,6 +49,12 @@ body {
     height: auto;
 }
 
+.stats {
+    display: flex;
+    gap: 20px;
+    font-size: 1.8rem;
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -207,5 +213,14 @@ footer {
         margin: 10px 0;
         text-align: center;
         width: 100%;
+    }
+}
+
+@media (max-width: 470px) {
+    .logo {
+        width: 100px;
+    }
+    .stats {
+        font-size: 1.4rem;
     }
 }

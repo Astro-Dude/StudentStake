@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const balance = await getUserBalance(user.uid);
       const statsSection = document.querySelector('.stats');
       if (statsSection) {
-        statsSection.innerHTML = `<h2>Balance: ${balance} coins</h2>`;
+        statsSection.innerHTML = `Balance: ${balance}`;
       }
     }
   });

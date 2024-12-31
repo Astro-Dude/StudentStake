@@ -24,7 +24,7 @@ class MineGame {
         this.revealed = [];
         this.gameActive = false;
         this.betAmount = 0;
-        this.rewardPerCell = 0.33; // 10% reward per safe cell
+        this.rewardPerCell = 1/3; // 10% reward per safe cell
         this.revealedCount = 0;
         
         this.setupEventListeners();
@@ -146,7 +146,7 @@ class MineGame {
                 const balance = await getUserBalance(user.uid);
                 const statsSection = document.querySelector('.stats');
                 if (statsSection) {
-                statsSection.innerHTML = `<h2>Balance: ${balance} coins</h2>`;
+                    statsSection.innerHTML = `Balance: ${balance}`;
                 }
             });
         } else {
@@ -196,7 +196,7 @@ class MineGame {
             const balance = await getUserBalance(user.uid);
             const statsSection = document.querySelector('.stats');
             if (statsSection) {
-            statsSection.innerHTML = `<h2>Balance: ${balance} coins</h2>`;
+                statsSection.innerHTML = `Balance: ${balance}`;
             }
 
         });
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const balance = await getUserBalance(user.uid);
           const statsSection = document.querySelector('.stats');
           if (statsSection) {
-            statsSection.innerHTML = `<h2>Balance: ${balance} coins</h2>`;
+            statsSection.innerHTML = `Balance: ${balance}`;
           }
         }
     });
