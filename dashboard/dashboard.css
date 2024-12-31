@@ -113,7 +113,7 @@ section {
     background-image: url("../Images/bg.png");
     background-size: cover;
     background-position: center;
-    padding: 90px;
+    padding: 90px 30px;
 }
 
 .games h2 {
@@ -239,5 +239,11 @@ section {
     }
     .stats {
         font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 950px) {
+    .games {
+        padding: 90px 15%;
     }
 }
