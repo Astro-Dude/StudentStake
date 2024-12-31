@@ -113,6 +113,7 @@ section {
     background-image: url("../Images/bg.png");
     background-size: cover;
     background-position: center;
+    padding: 90px;
 }
 
 .games h2 {
@@ -190,17 +191,6 @@ section {
 .games-layer a i {
     font-size: 2rem;
     color: var(--main-color);
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    padding: 50px 0;
-    text-align: center;
-    padding: 50px;
 }
 
 @media (max-width: 1200px) {
