@@ -18,7 +18,7 @@ navLinks.forEach(link => {
 
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getUserBalance } from '../firebase-db.js';
+import { getUserBalance, updateUserBalance } from '../firebase-db.js';
 
 
 const firebaseConfig = {
@@ -52,6 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+const reset = document.getElementById('reset');
+
+reset.onclick = async () => {
+    const user = auth.currentUser;
+    if (!user) {
+        alert('Please login first');
+        return;
+    }
+
+    try {
+        await updateUserBalance(user.uid, 1000);
+        const newBalance = await getUserBalance(user.uid);
+        
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsSection.innerHTML = `Balance: ${newBalance}`;
+        }
+
+        alert('Balance reset successful!');
+    } catch (error) {
+        console.error('Error resetting balance:', error);
+        alert('Failed to reset balance. Please try again.');
+    }
+};
+
 
 const signOut = document.getElementById('logout');
 
