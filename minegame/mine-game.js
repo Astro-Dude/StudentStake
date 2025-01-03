@@ -106,6 +106,7 @@ class MineGame {
                 minesToPlace--;
             }
         }
+        
         return grid;
     }
 
